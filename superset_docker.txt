@@ -1,0 +1,30 @@
+docker run -d -p 8086:8088 --name superset \
+-v $(pwd)/superset_config.py:/app/pythonpath/superset_config.py \
+-v /Users/dgg32/Documents/duckdb:/app/data \
+apache/superset
+
+docker exec -it superset superset fab create-admin
+
+docker exec -it superset superset db upgrade
+
+docker exec -it superset superset init
+
+
+docker exec -it superset /bin/bash
+
+pip install duckdb duckdb-engine
+
+
+
+
+SELECT Drug.name AS drug_name, Disorder.name AS disorder_name 
+FROM Drug, Disorder, DrugDisorder 
+WHERE Disorder.disorder_cui = DrugDisorder.disorder_cui 
+  AND Drug.drug_cui = DrugDisorder.drug_cui 
+
+
+SELECT Drug.name AS drug_name, Trials.PostingID AS trial_id FROM Drug, Trials WHERE list_contains(Trials.cui, Drug.drug_cui)
+
+
+SELECT MOA.name AS moa_name, Drug.name AS drug_name FROM MOA, Drug, DrugMOA WHERE MOA.moa_id = DrugMOA.moa_id 
+  AND Drug.drug_cui = DrugMOA.drug_cui 

@@ -1,0 +1,10 @@
+
+
+Can medrysone be used to treat any other disorders besides Scleritis?
+
+
+SELECT d.name AS drug_name, dis.name AS other_disorders
+FROM Drug d
+JOIN DrugDisorder dd ON d.drug_cui = dd.drug_cui
+JOIN Disorder dis ON dd.disorder_cui = dis.disorder_cui
+WHERE d.name = 'medrysone' AND dis.name <> 'Scleritis';
