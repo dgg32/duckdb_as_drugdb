@@ -6,7 +6,7 @@
 
   
 
-This repository contains code and data for my article "[DuckDB as a DrugDB: a Free and Simple Multi-Model Drug and Trial Database](https://dgg32.medium.com/build-a-drug-trial-database-with-the-multi-model-surrealdb-6a23c2b5faa3)".
+This repository contains code and data for my article "[DuckDB as a DrugDB: a Free and Simple Multi-Model Drug and Trial Database](https://dgg32.medium.com/duckdb-as-a-drugdb-a-free-and-simple-multi-model-drug-and-trial-database-83c222d1e9dd)".
 
 
 
