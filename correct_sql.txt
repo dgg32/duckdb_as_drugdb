@@ -8,3 +8,6 @@ FROM Drug d
 JOIN DrugDisorder dd ON d.drug_cui = dd.drug_cui
 JOIN Disorder dis ON dd.disorder_cui = dis.disorder_cui
 WHERE d.name = 'medrysone' AND dis.name <> 'Scleritis';
+
+
+What drugs can be used to treat joint-related disorders?

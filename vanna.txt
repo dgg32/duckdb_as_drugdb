@@ -1,0 +1,6 @@
+FROM GRAPH_TABLE (drug_graph
+  MATCH
+  (d:Drug WHERE d.name = 'medrysone')-[h:HAS_MOA]->(m:MOA)
+  COLUMNS (m.name AS moa_name)
+)
+LIMIT 5;
