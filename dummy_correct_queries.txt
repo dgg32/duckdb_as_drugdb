@@ -1,0 +1,6 @@
+SELECT Disorder.name FROM DrugDisorder, Drug, Disorder WHERE Drug.name = 'medrysone' AND Disorder.disorder_cui = DrugDisorder.disorder_cui AND Drug.drug_cui = DrugDisorder.drug_cui
+
+
+
+
+FROM GRAPH_TABLE (drug_graph  MATCH  (d:Drug WHERE d.name = 'medrysone')-[m:MAY_TREAT]->(c:Disorder)  COLUMNS (c.name AS disorder_name)  )  LIMIT 2;

@@ -11,3 +11,15 @@ WHERE d.name = 'medrysone' AND dis.name <> 'Scleritis';
 
 
 What drugs can be used to treat joint-related disorders?
+
+
+
+SELECT "Disorder"."name" 
+FROM "DrugDisorder" 
+JOIN "Disorder" ON "DrugDisorder"."disorder_cui" = "Disorder"."disorder_cui" 
+JOIN "Drug" ON "DrugDisorder"."drug_cui" = "Drug"."drug_cui" 
+WHERE "Drug"."name" = 'medrysone' 
+LIMIT 6;
+
+
+What is the MOA of imolamine?
